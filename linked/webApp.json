@@ -3,10 +3,16 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "webAppName": {
-           "type": "string"
+            "type": "string"
         },
         "webAppPlanId": {
-           "type": "string"
+            "type": "string"
+        },
+        "appinsight": {
+           "type": "string",
+           "metadata": {
+                "description": "description"
+            }
         }
     },
     "functions": [],
@@ -23,14 +29,22 @@
             },
             "properties": {
                 "name": "[parameters('webAppName')]",
-                "serverFarmId": "[parameters('webAppPlanId')]"
+                "serverFarmId": "[parameters('webAppPlanId')]",
+                "siteConfig": {
+                    "appSettings": [
+                        {
+                            "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
+                            "value": "[parameters('appinsight')]"
+                        }
+                    ]
+                }
             }
         }
     ],
     "outputs": {
         "status": {
-           "type": "string",
-           "value": "we are happy"
+            "type": "string",
+            "value": "we are happy"
         }
     }
 }
