@@ -41,7 +41,7 @@
             },
             "resources": [
                 {
-                    "name": "appsettings",
+                    "name": "[concat(parameters('webAppName'),'/appsettings')]",
                     "type": "Microsoft.Web/sites/config",
                     "apiVersion": "2016-08-01",
                     "properties": {
