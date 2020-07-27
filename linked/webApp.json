@@ -1,0 +1,36 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "webAppName": {
+           "type": "string"
+        },
+        "webAppPlanId": {
+           "type": "string"
+        }
+    },
+    "functions": [],
+    "variables": {},
+    "resources": [
+        {
+            "name": "[parameters('webAppName')]",
+            "type": "Microsoft.Web/sites",
+            "apiVersion": "2016-08-01",
+            "location": "[resourceGroup().location]",
+            "tags": {
+                "displayName": "[parameters('webAppName')]",
+                "education": "demonstration"
+            },
+            "properties": {
+                "name": "[parameters('webAppName')]",
+                "serverFarmId": "[parameters('webAppPlanId')]"
+            }
+        }
+    ],
+    "outputs": {
+        "status": {
+           "type": "string",
+           "value": "we are happy"
+        }
+    }
+}
