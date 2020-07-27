@@ -34,6 +34,9 @@
             "resources": [
                 {
                     "name": "appsettings",
+                    "dependsOn": [
+                        "[parameters('webAppName')]"
+                    ],
                     "type": "config",
                     "apiVersion": "2016-08-01",
                     "properties": {
