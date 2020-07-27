@@ -29,25 +29,17 @@
             },
             "properties": {
                 "name": "[parameters('webAppName')]",
-                "serverFarmId": "[parameters('webAppPlanId')]",
-                "siteConfig": {
-                    //"appSettings": [
-                    //    {
-                    //        "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
-                    //        "value": "[parameters('appinsight')]"
-                    //    }
-                    //]
-                }
+                "serverFarmId": "[parameters('webAppPlanId')]"
             },
             "resources": [
                 {
-                    "name": "[concat(parameters('webAppName'),'/appsettings')]",
-                    "type": "Microsoft.Web/sites/config",
+                    "name": "appsettings",
+                    "type": "config",
                     "apiVersion": "2016-08-01",
                     "properties": {
-                        "name1": "value1",
-                        "name2": "value2",
-                        "nam3": "value3"
+                        "name1": "value11111111111",
+                        "name2": "value222222222",
+                        "nam3": "value3333333333"
                     }
                 }
             ]
