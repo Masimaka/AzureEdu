@@ -3,9 +3,9 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "webAppPlanName": {
-           "type": "string",
-           "metadata": {
-                "description": "description"
+            "type": "string",
+            "metadata": {
+                "description": "web application plan name"
             }
         }
     },
@@ -30,13 +30,13 @@
         }
     ],
     "outputs": {
-        "webAppName": {
-           "type": "string",
-           "value": "[parameters('webAppPlanName')]"
+        "webAppPlanName": {
+            "type": "string",
+            "value": "[parameters('webAppPlanName')]"
         },
-        "webAppId": {
-           "type": "string",
-           "value": "[resourceId('Microsoft.Web/serverfarms',parameters('webAppPlanName'))]"
+        "webAppPlanId": {
+            "type": "string",
+            "value": "[resourceId('Microsoft.Web/serverfarms',parameters('webAppPlanName'))]"
         }
     }
 }
