@@ -9,8 +9,8 @@
             "type": "string"
         },
         "appinsight": {
-           "type": "string",
-           "metadata": {
+            "type": "string",
+            "metadata": {
                 "description": "description"
             }
         }
@@ -31,14 +31,26 @@
                 "name": "[parameters('webAppName')]",
                 "serverFarmId": "[parameters('webAppPlanId')]",
                 "siteConfig": {
-                    "appSettings": [
-                        {
-                            "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
-                            "value": "[parameters('appinsight')]"
-                        }
-                    ]
+                    //"appSettings": [
+                    //    {
+                    //        "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
+                    //        "value": "[parameters('appinsight')]"
+                    //    }
+                    //]
                 }
-            }
+            },
+            "resources": [
+                {
+                    "name": "appsettings",
+                    "type": "Microsoft.Web/sites/config",
+                    "apiVersion": "2016-08-01",
+                    "properties": {
+                        "name1": "value1",
+                        "name2": "value2",
+                        "nam3": "value3"
+                    }
+                }
+            ]
         }
     ],
     "outputs": {
